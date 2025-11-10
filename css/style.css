@@ -1,0 +1,149 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+nav {
+  background-color: #d2bba0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 40px;
+  display: flex;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 14px 20px;
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px; 
+  font-weight: 600;
+}
+
+
+nav a:hover {
+  background-color: #9f7e69;
+}
+
+
+nav a.active {
+  background-color: #9f7e69;
+  font-weight: bold;
+}
+
+
+.container {
+  position: relative;
+  width: 100%;
+  margin-top: 80px;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.text-block {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+
+.text-block h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px; 
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+
+.text-block p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px; 
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.text-block1 {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
+
+
+.text-block1 h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px; 
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+
+.text-block1 p,
+.text-block1 ul,
+.text-block1 li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px; 
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+.text-block2 {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 2s ease-in forwards;
+}
