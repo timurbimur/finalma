@@ -1,1 +1,1 @@
-# finalma
+https://timurbimur.github.io/finalma/
