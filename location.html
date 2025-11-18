@@ -1,22 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diva Espresso</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diva Espresso - Locations</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f5f0eb 0%, #e8ddd3 100%);
+    }
+
+    .page-header {
+      margin-top: 100px;
+      text-align: center;
+      padding: 40px 20px;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .page-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 48px;
+      color: #3c2f2f;
+      margin-bottom: 15px;
+    }
+
+    .page-header p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      color: #5a4a42;
+    }
+
+    .locations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      padding: 40px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .location-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      padding: 30px;
+      transition: all 0.3s ease;
+      animation: fadeUp 0.6s ease forwards;
+      opacity: 0;
+    }
+
+    .location-card:nth-child(1) { animation-delay: 0.1s; }
+    .location-card:nth-child(2) { animation-delay: 0.2s; }
+    .location-card:nth-child(3) { animation-delay: 0.3s; }
+    .location-card:nth-child(4) { animation-delay: 0.4s; }
+    .location-card:nth-child(5) { animation-delay: 0.5s; }
+    .location-card:nth-child(6) { animation-delay: 0.6s; }
+    .location-card:nth-child(7) { animation-delay: 0.7s; }
+
+    .location-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    }
+
+    .location-card h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: #3c2f2f;
+      margin-bottom: 15px;
+      border-bottom: 3px solid #d2bba0;
+      padding-bottom: 10px;
+    }
+
+    .location-info {
+      margin-bottom: 20px;
+    }
+
+    .location-info p {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      color: #5a4a42;
+      margin: 8px 0;
+      line-height: 1.6;
+    }
+
+    .address {
+      font-weight: 600;
+      color: #3c2f2f;
+    }
+
+    .phone {
+      color: #9f7e69;
+      font-weight: 600;
+    }
+
+    .hours-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: #3c2f2f;
+      margin: 15px 0 10px 0;
+      font-weight: 700;
+    }
+
+    .hours-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .hours-list li {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      color: #5a4a42;
+      padding: 6px 0;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #f0e8e0;
+    }
+
+    .hours-list li:last-child {
+      border-bottom: none;
+    }
+
+    .day {
+      font-weight: 600;
+      color: #3c2f2f;
+    }
+
+    .time {
+      color: #9f7e69;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 {
+        font-size: 36px;
+      }
+      
+      .locations-grid {
+        padding: 20px;
+        gap: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-              <img src="images/Clear_Diva_Logo_4a95b25a-ffae-4ddc-b4a3-9f5cb26ff609.webp" width="50px">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="location.html">Location</a></li>
-                
-            </ul>
-        </nav>
-    </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="location.html">Location</a></li>
+      <li><a href="coffee-recommender.html">Find Your Drink</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <h1>Our Locations</h1>
+    <p>Visit us at any of our Seattle-area locations</p>
+  </div>
+
+  <div class="locations-grid">
+    <div class="location-card">
+      <h2>Broadview Diva Espresso</h2>
+      <div class="location-info">
+        <p class="address">📍 10555 Greenwood Ave N, Seattle WA 98133</p>
+        <p class="phone">☎ 206-783-8537</p>
+      </div>
+      <p class="hours-title">Hours</p>
+      <ul class="hours-list">
+        <li><span class="day">Monday:</span> <span class="time">6:30AM – 5PM</span></li>
+        <li><span class="day">Tuesday:</span> <span class="time">6:30AM – 5PM</span></li>
+        <li><span class="day">Wednesday:</span> <span class="time">6:30AM – 5PM</span></li>
+        <li><span class="day">Thursday:</span> <span class="time">6:30AM – 5PM</span></li>
+        <li><span class="day">Friday:</span> <span class="time">6:30AM – 5PM</span></li>
+        <li><span class="day">Saturday:</span> <span class="time">7AM – 5PM</span></li>
+        <li><span class="day">Sunday:</span> <span class="time">7AM – 5PM</span></li>
+      </ul>
+    </div>
+
+    <div class="location-card">
+      <h2>Chinook Diva Espresso</h2>
+      <div class="location-info">
+        <p class="address">📍 401 5th Ave, Seattle, WA 98104</p>
+        <p class="phone">☎ 206-682-2173</p>
+      </div>
+      <p class="hours-title">Hours</p>
+      <ul class="hours-list">
+        <li><span class="day">Monday:</span> <span class="time">6:30AM – 5PM</span></li>
+        <li><span class="day">Tuesday:</span> <span class="time">6:30AM – 5PM</span></li>
+        <li><span class="day">Wednesday:</span> <span class="time">6:30AM – 5PM</span></li>
+        <li><span class="day">Thursday:</span> <span class="time">6:30AM – 5PM</span></li>
+        <li><span class="day">Friday:</span> <span class="time">6:30AM – 5PM</span></li>
+        <li><span class="day">Saturday:</span> <span class="time">Closed</span></li>
+        <li><span class="day">Sunday:</span> <span class="time">Closed</span></li>
+      </ul>
+    </div>
+
+    <div class="location-card">
+      <h2>Harborview Diva Espresso</h2>
+      <div class="location-info">
+        <p class="address">📍 502 9th Ave, Seattle, WA 98104</p>
+        <p class="phone">☎ 206-724-0658</p>
+      </div>
+      <p class="hours-title">Hours</p>
+      <ul class="hours-list">
+        <li><span class="day">Monday:</span> <span class="time">6AM – 5PM</span></li>
+        <li><span class="day">Tuesday:</span> <span class="time">6AM – 5PM</span></li>
+        <li><span class="day">Wednesday:</span> <span class="time">6AM – 5PM</span></li>
+        <li><span class="day">Thursday:</span> <span class="time">6AM – 5PM</span></li>
+        <li><span class="day">Friday:</span> <span class="time">6AM – 5PM</span></li>
+        <li><span class="day">Saturday:</span> <span class="time">6AM – 4PM</span></li>
+        <li><span class="day">Sunday:</span> <span class="time">6AM – 4PM</span></li>
+      </ul>
+    </div>
+
+    <div class="location-card">
+      <h2>Stone Way Diva Espresso</h2>
+      <div class="location-info">
+        <p class="address">📍 4612 Stone Way N, Seattle, WA 98103</p>
+        <p class="phone">☎ 206-641-9045</p>
+      </div>
+      <p class="hours-title">Hours</p>
+      <ul class="hours-list">
+        <li><span class="day">Monday:</span> <span class="time">6:30AM – 6PM</span></li>
+        <li><span class="day">Tuesday:</span> <span class="time">6:30AM – 6PM</span></li>
+        <li><span class="day">Wednesday:</span> <span class="time">6:30AM – 6PM</span></li>
+        <li><span class="day">Thursday:</span> <span class="time">6:30AM – 6PM</span></li>
+        <li><span class="day">Friday:</span> <span class="time">6:30AM – 6PM</span></li>
+        <li><span class="day">Saturday:</span> <span class="time">6:30AM – 6PM</span></li>
+        <li><span class="day">Sunday:</span> <span class="time">7AM – 6PM</span></li>
+      </ul>
+    </div>
+
+    <div class="location-card">
+      <h2>Greenwood Diva Espresso</h2>
+      <div class="location-info">
+        <p class="address">📍 7916 Greenwood Ave N, Seattle, WA 98103</p>
+        <p class="phone">☎ 206-781-1213</p>
+      </div>
+      <p class="hours-title">Hours</p>
+      <ul class="hours-list">
+        <li><span class="day">Monday:</span> <span class="time">6AM – 6PM</span></li>
+        <li><span class="day">Tuesday:</span> <span class="time">6AM – 6PM</span></li>
+        <li><span class="day">Wednesday:</span> <span class="time">6AM – 6PM</span></li>
+        <li><span class="day">Thursday:</span> <span class="time">6AM – 6PM</span></li>
+        <li><span class="day">Friday:</span> <span class="time">6AM – 6PM</span></li>
+        <li><span class="day">Saturday:</span> <span class="time">6:30AM – 6PM</span></li>
+        <li><span class="day">Sunday:</span> <span class="time">7AM – 6PM</span></li>
+      </ul>
+    </div>
+
+    <div class="location-card">
+      <h2>Highlands Diva Espresso</h2>
+      <div class="location-info">
+        <p class="address">📍 14419 Greenwood Ave N, Seattle, WA 98133</p>
+        <p class="phone">☎ 206-417-1639</p>
+      </div>
+      <p class="hours-title">Hours</p>
+      <ul class="hours-list">
+        <li><span class="day">Monday:</span> <span class="time">6AM – 6PM</span></li>
+        <li><span class="day">Tuesday:</span> <span class="time">6AM – 6PM</span></li>
+        <li><span class="day">Wednesday:</span> <span class="time">6AM – 6PM</span></li>
+        <li><span class="day">Thursday:</span> <span class="time">6AM – 6PM</span></li>
+        <li><span class="day">Friday:</span> <span class="time">6AM – 6PM</span></li>
+        <li><span class="day">Saturday:</span> <span class="time">7AM – 6PM</span></li>
+        <li><span class="day">Sunday:</span> <span class="time">7AM – 6PM</span></li>
+      </ul>
+    </div>
+
+    <div class="location-card">
+      <h2>Kenmore Diva Espresso</h2>
+      <div class="location-info">
+        <p class="address">📍 6728 NE 181st St, Kenmore WA 98028</p>
+
+        <p class="phone">☎ 425-219-4959</p>
+      </div>
+      <p class="hours-title">Hours</p>
+      <ul class="hours-list">
+        <li><span class="day">Monday:</span> <span class="time">6AM – 6PM</span></li>
+        <li><span class="day">Tuesday:</span> <span class="time">6AM – 6PM</span></li>
+        <li><span class="day">Wednesday:</span> <span class="time">6AM – 6PM</span></li>
+        <li><span class="day">Thursday:</span> <span class="time">6AM – 6PM</span></li>
+        <li><span class="day">Friday:</span> <span class="time">6AM – 6PM</span></li>
+        <li><span class="day">Saturday:</span> <span class="time">6AM – 6PM</span></li>
+        <li><span class="day">Sunday:</span> <span class="time">7AM – 6PM</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+  Copyright © 2025 Diva Espresso.
+Vogue theme by Pixel Union.
+Powered by Shopify.
+<p>Contact us here:</p>
+<a href="https://www.facebook.com/divaespresso/"><img src="images/facebook.png" width="20px"></a>
+<a href="https://x.com/DivaEspresso"><img src= "images/twitters.png" width="20px"></a>
+<a href="https://www.instagram.com/divaespresso/"><img src="images/instagram.jpg" width="20px"></a>
+<a href="info@divaespresso.com"><img src="images/email-and-mail-icon-black-free-png.webp" width="20px"></footer></a>
+
+</body>
+</html>

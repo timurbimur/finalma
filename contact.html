@@ -3,20 +3,110 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diva Espresso</title>
+    <title>Diva Espresso - Contact</title>
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body {
+            background: #e7dcdc;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;     
+            padding-top: 140px;        
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .description {
+            font-size: 18px;
+            max-width: 600px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-container {
+            width: 100%;
+            max-width: 600px;        
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 12px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 140px;
+        }
+
+        button {
+            background: #2e4482;
+            color: white;
+            padding: 12px 28px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 3px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #1f315c;
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <nav>
-            <ul>
-              <img src="images/Clear_Diva_Logo_4a95b25a-ffae-4ddc-b4a3-9f5cb26ff609.webp" width="50px">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="location.html">Location</a></li>
-                
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <ul>
+            <img src="images/Clear_Diva_Logo_4a95b25a-ffae-4ddc-b4a3-9f5cb26ff609.webp" width="50px" alt="Diva Espresso Logo">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+            <li><a href="location.html">Location</a></li>
+            <li><a href="coffee-recommender.html">Find Your Drink</a></li>
+        </ul>
+    </nav>
+
+    <h1>CONTACT</h1>
+
+    <p class="description">
+        Thank you for visiting us! Provide your details and a message below, and we will get back to you as soon as possible.
+    </p>
+
+    <div class="contact-container">
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="d2cbe737-54f9-496c-85a7-b72c7c5d679f">
+
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="your@email.com" required>
+            <textarea name="message" placeholder="Write your message here" required></textarea>
+
+            <button type="submit">SUBMIT</button>
+        </form>
+    </div>
+
+    <footer>
+  Copyright © 2025 Diva Espresso.
+Vogue theme by Pixel Union.
+Powered by Shopify.
+<p>Contact us here:</p>
+<a href="https://www.facebook.com/divaespresso/"><img src="images/facebook.png" width="20px"></a>
+<a href="https://x.com/DivaEspresso"><img src= "images/twitters.png" width="20px"></a>
+<a href="https://www.instagram.com/divaespresso/"><img src="images/instagram.jpg" width="20px"></a>
+<a href="info@divaespresso.com"><img src="images/email-and-mail-icon-black-free-png.webp" width="20px"></footer></a>
+
+
+</body>
+</html>

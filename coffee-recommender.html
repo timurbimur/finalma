@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coffee Recommender</title>
+    <link rel="stylesheet" href="css/style.css">
+     <header>
+        <nav>
+            <ul>
+                <img src="images/Clear_Diva_Logo_4a95b25a-ffae-4ddc-b4a3-9f5cb26ff609.webp" width="50px">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="location.html">Location</a></li>
+                <li><a href="coffee-recommender.html">Find Your Drink</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Bootstrap CSS -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    />
+
+    <style>
+        body {
+            background-color: #f7f3ee;
+            margin: 0;
+            padding: 0;
+            padding-top: 130px; 
+        }
+
+
+        .recommender-box {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        .result-box {
+            background: #fff5e6;
+            border-left: 6px solid #d29b68;
+            padding: 20px;
+            border-radius: 10px;
+            display: none;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+       
+    </style>
+</head>
+
+<body>
+
+  
+   
+
+    <div class="container mt-4">
+        <h1 class="text-center mb-4">Find Your Perfect Coffee</h1>
+        <p class="text-center mb-5">Tell us what you like, and we’ll suggest the perfect drink for you.</p>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8 recommender-box">
+
+             
+                <form id="coffeeForm">
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">How strong do you like your coffee?</label>
+                        <select id="strength" class="form-select" required>
+                            <option value="" disabled selected>Select one</option>
+                            <option value="light">Light & Smooth</option>
+                            <option value="medium">Medium</option>
+                            <option value="strong">Strong & Bold</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Do you want something sweet?</label>
+                        <select id="sweet" class="form-select" required>
+                            <option value="" disabled selected>Select one</option>
+                            <option value="yes">Yes, sweet!</option>
+                            <option value="no">Not really</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Do you prefer hot or iced?</label>
+                        <select id="temp" class="form-select" required>
+                            <option value="" disabled selected>Select one</option>
+                            <option value="hot">Hot</option>
+                            <option value="iced">Iced</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-dark w-100">Find My Drink</button>
+                </form>
+
+                <!-- RESULT -->
+                <div id="result" class="result-box mt-4"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("coffeeForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            let strength = document.getElementById("strength").value;
+            let sweet = document.getElementById("sweet").value;
+            let temp = document.getElementById("temp").value;
+
+            let drink = "";
+
+            
+if (strength === "light" && sweet === "yes" && temp === "hot") {
+    drink = "Hot Vanilla Latte";
+}
+else if (strength === "light" && sweet === "yes" && temp === "iced") {
+    drink = "Iced Vanilla Latte";
+} 
+else if (strength === "light" && sweet === "no") {
+    drink = temp === "hot" ? "Hot Latte" : "Iced Latte";
+}
+else if (strength === "medium" && sweet === "yes") {
+    drink = temp === "hot" ? "Mocha" : "Iced Mocha";
+}
+else if (strength === "medium" && sweet === "no") {
+    drink = temp === "hot" ? "Americano" : "Iced Americano";
+}
+else if (strength === "strong" && sweet === "yes") {
+    drink = temp === "hot" ? "Caramel Macchiato" : "Iced Caramel Macchiato";
+}
+else if (strength === "strong" && sweet === "no") {
+    drink = temp === "hot" ? "Espresso" : "Cold Brew";
+}
+
+            let resultBox = document.getElementById("result");
+            resultBox.style.display = "block";
+            resultBox.innerHTML = `
+                <h4>Your Drink Recommendation:</h4>
+                <p class="mb-1"><strong>${drink}</strong></p>
+                <p>Perfect choice for your taste preferences</p>
+            `;
+        });
+    </script>
+
+    <footer>
+  Copyright © 2025 Diva Espresso.
+Vogue theme by Pixel Union.
+Powered by Shopify.
+<p>Contact us here:</p>
+<a href="https://www.facebook.com/divaespresso/"><img src="images/facebook.png" width="20px"></a>
+<a href="https://x.com/DivaEspresso"><img src= "images/twitters.png" width="20px"></a>
+<a href="https://www.instagram.com/divaespresso/"><img src="images/instagram.jpg" width="20px"></a>
+<a href="info@divaespresso.com"><img src="images/email-and-mail-icon-black-free-png.webp" width="20px"></footer></a>
+
+
+</body>
+</html>
