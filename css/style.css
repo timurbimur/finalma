@@ -68,12 +68,12 @@ nav a.active {
 
 .text-block {
   position: absolute;
-  top: 25%;
+  top: 22%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 40px 40px;
+  padding: 10px 40px;
   border-radius: 10px;
   text-align: center;
   opacity: 0;
@@ -96,7 +96,7 @@ nav a.active {
 
 .text-block1 {
   position: absolute;
-  top: 45%;
+  top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
@@ -126,7 +126,7 @@ nav a.active {
 
 .text-block2 {
   position: absolute;
-  top: 10%;
+  top: 9%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
