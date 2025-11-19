@@ -7,7 +7,7 @@ body {
   padding: 0;
 }
 
-/* Navigation Bar Styles */
+
 nav {
   background-color: #d2bba0;
   opacity: 0.95;
@@ -52,7 +52,7 @@ nav a.active {
   font-weight: bold;
 }
 
-/* Container Styles */
+
 .container {
   position: relative;
   width: 100%;
@@ -65,7 +65,7 @@ nav a.active {
   display: block;
 }
 
-/* Text Block Styles */
+
 .text-block {
   position: absolute;
   top: 25%;
@@ -73,7 +73,7 @@ nav a.active {
   transform: translate(-50%, -50%);
   color: white;
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 20px 30px;
+  padding: 40px 40px;
   border-radius: 10px;
   text-align: center;
   opacity: 0;
@@ -138,7 +138,7 @@ nav a.active {
   animation: fadeIn 2s ease-in forwards;
 }
 
-/* Animations */
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -161,7 +161,7 @@ nav a.active {
   }
 }
 
-/* Grid Layout Styles */
+
 .grid-layout {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -200,7 +200,7 @@ nav a.active {
   line-height: 1.6;
 }
 
-/* Location Page Styles */
+
 .page-header {
   margin-top: 100px;
   text-align: center;
@@ -321,7 +321,7 @@ nav a.active {
   color: #9f7e69;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   nav ul {
     flex-wrap: wrap;
